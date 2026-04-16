@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Ontology</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Library Ontology</h1>
+
+    <h2>📌 Description</h2>
+    <p>
+        This ontology models a simple library system including students, librarians,
+        books, and libraries. It demonstrates relationships such as borrowing books
+        and managing library resources.
+    </p>
+
+    <h2>📚 Classes</h2>
+    <ul>
+        <li>Person</li>
+        <li>Student (Subclass of Person)</li>
+        <li>Librarian (Subclass of Person)</li>
+        <li>Book</li>
+        <li>Library</li>
+    </ul>
+
+    <h2>🔗 Object Properties</h2>
+    <ul>
+        <li>borrows (Student → Book)</li>
+        <li>worksAt (Librarian → Library)</li>
+        <li>locatedIn (Book → Library)</li>
+    </ul>
+
+    <h2>🔢 Data Properties</h2>
+    <ul>
+        <li>studentID</li>
+        <li>bookTitle</li>
+    </ul>
+
+    <h2>🧠 Reasoning</h2>
+    <p>
+        A reasoner was used to infer class memberships. For example, all students
+        are automatically inferred as persons.
+    </p>
+
+    <h2>🔍 SPARQL Queries</h2>
+    <p>
+        The ontology includes multiple SPARQL queries to retrieve:
+    </p>
+    <ul>
+        <li>All students</li>
+        <li>Books borrowed by students</li>
+        <li>Library locations of books</li>
+    </ul>
+
+    <h2>🌐 Download Ontology</h2>
+    <p>
+        <a href="library.owl" target="_blank">Download the OWL file</a>
+    </p>
+
+    <h2>♻️ Reusability</h2>
+    <p>
+        This ontology can be reused for educational purposes or extended into
+        a full library management system.
+    </p>
+
+    <h2>👤 Author</h2>
+    <p>Your Name Here</p>
+</div>
+
+</body>
+</html>
