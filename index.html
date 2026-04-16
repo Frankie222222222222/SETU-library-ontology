@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SETU Campus Library Ontology</title>
+  <style>
+    :root{
+      --bg:#f4f7fb;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --accent:#2563eb;
+      --accent-soft:#dbeafe;
+      --success:#065f46;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:linear-gradient(180deg,#eef4ff 0%, #f7f9fc 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:40px 20px 60px;
+    }
+    .hero{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:34px;
+      box-shadow:0 12px 30px rgba(31,41,55,.08);
+      margin-bottom:22px;
+    }
+    .badge{
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:var(--accent);
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.02em;
+      margin-bottom:14px;
+    }
+    h1,h2,h3{margin:0 0 12px}
+    h1{font-size:2.2rem}
+    h2{
+      font-size:1.35rem;
+      padding-bottom:10px;
+      border-bottom:2px solid var(--line);
+      margin-top:0;
+    }
+    p{margin:0 0 12px}
+    .lead{
+      color:var(--muted);
+      max-width:900px;
+      font-size:1.04rem;
+    }
+    .meta{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:14px;
+      margin-top:24px;
+    }
+    .meta-card{
+      background:#f9fbff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px 16px;
+    }
+    .meta-card strong{
+      display:block;
+      font-size:.9rem;
+      color:var(--muted);
+      margin-bottom:4px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:22px;
+    }
+    .card{
+      grid-column:span 12;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:26px;
+      box-shadow:0 10px 24px rgba(31,41,55,.06);
+    }
+    .half{grid-column:span 6}
+    .third{grid-column:span 4}
+    @media (max-width:850px){
+      .half,.third{grid-column:span 12}
+      h1{font-size:1.8rem}
+    }
+    ul{
+      margin:8px 0 0 18px;
+      padding:0;
+    }
+    li{margin:6px 0}
+    .tree{
+      background:#f8fafc;
+      border:1px dashed #cbd5e1;
+      border-radius:16px;
+      padding:16px 18px;
+      font-family: "Courier New", monospace;
+      white-space:pre-line;
+    }
+    .tag{
+      display:inline-block;
+      margin:4px 6px 0 0;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#f3f4f6;
+      font-size:14px;
+    }
+    .table-wrap{
+      overflow-x:auto;
+      border:1px solid var(--line);
+      border-radius:14px;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      background:white;
+    }
+    th,td{
+      padding:12px 14px;
+      text-align:left;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+    }
+    th{
+      background:#f8fafc;
+      font-size:.96rem;
+    }
+    .note{
+      background:#eff6ff;
+      border-left:4px solid var(--accent);
+      padding:14px 16px;
+      border-radius:12px;
+      color:#1e3a8a;
+      margin-top:14px;
+    }
+    .success{
+      background:#ecfdf5;
+      border-left:4px solid #10b981;
+      color:var(--success);
+    }
+    a{
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:700;
+    }
+    a:hover{text-decoration:underline}
+    footer{
+      text-align:center;
+      color:var(--muted);
+      margin-top:28px;
+      font-size:.95rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="badge">Ontology Project</div>
+      <h1>SETU Campus Library Ontology</h1>
+      <p class="lead">
+        This ontology models the main entities, services, and relationships in a campus library system.
+        It represents people, resources, loan transactions, study rooms, and reservations in a structured semantic model that supports reasoning, querying, and reuse.
+      </p>
+
+      <div class="meta">
+        <div class="meta-card">
+          <strong>Student</strong>
+          Xu Zhiyuan
+        </div>
+        <div class="meta-card">
+          <strong>Student ID</strong>
+          20115990
+        </div>
+        <div class="meta-card">
+          <strong>Programme</strong>
+          Human-Centered Systems
+        </div>
+        <div class="meta-card">
+          <strong>Major</strong>
+          MSc Information Systems Processes
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card half">
+        <h2>Project Overview</h2>
+        <p>
+          The ontology was created in Protégé to describe how a university library operates. It captures users, staff, resources,
+          transactions, and facilities through classes, subclasses, properties, individuals, and formal restrictions.
+        </p>
+        <p>
+          Compared with a traditional database structure, this ontology supports semantic inference, relationship-based retrieval,
+          and future extension into linked data and knowledge graph applications.
+        </p>
+        <div class="note">
+          The model focuses on clarity, modularity, and realistic library workflows such as borrowing resources, processing loans,
+          and reserving study rooms.
+        </div>
+      </article>
+
+      <article class="card half">
+        <h2>Class Hierarchy</h2>
+        <div class="tree">Library
+Person
+ ├── Member
+ └── Librarian
+Resource
+ ├── Book
+ └── Journal
+Loan
+StudyRoom
+Reservation</div>
+        <p style="margin-top:12px;">
+          The hierarchy supports inheritance. For example, both <strong>Member</strong> and <strong>Librarian</strong> are subclasses of <strong>Person</strong>,
+          while <strong>Book</strong> and <strong>Journal</strong> are subclasses of <strong>Resource</strong>.
+        </p>
+      </article>
+
+      <article class="card third">
+        <h2>Main Classes</h2>
+        <span class="tag">Library</span>
+        <span class="tag">Person</span>
+        <span class="tag">Member</span>
+        <span class="tag">Librarian</span>
+        <span class="tag">Resource</span>
+        <span class="tag">Book</span>
+        <span class="tag">Journal</span>
+        <span class="tag">Loan</span>
+        <span class="tag">StudyRoom</span>
+        <span class="tag">Reservation</span>
+      </article>
+
+      <article class="card third">
+        <h2>Key Individuals</h2>
+        <ul>
+          <li>MainCampusLibrary</li>
+          <li>Member_ZhangWei</li>
+          <li>Member_LiNa</li>
+          <li>Librarian_Chen</li>
+          <li>Librarian_Wang</li>
+          <li>Book_DataScience101</li>
+          <li>Book_SemanticWebBasics</li>
+          <li>Journal_AISystems</li>
+          <li>Loan_001 / Loan_002</li>
+          <li>Reservation_001</li>
+          <li>StudyRoom_A101 / StudyRoom_B202</li>
+        </ul>
+      </article>
+
+      <article class="card third">
+        <h2>Ontology Goals</h2>
+        <ul>
+          <li>Model core library operations semantically</li>
+          <li>Support SPARQL querying</li>
+          <li>Enable reasoning in Protégé</li>
+          <li>Provide reusable linked data</li>
+          <li>Allow future extension to digital library systems</li>
+        </ul>
+      </article>
+
+      <article class="card half">
+        <h2>Object Properties</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Domain</th>
+                <th>Range</th>
+                <th>Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>hasMember</td><td>Library</td><td>Member</td><td>Links a library to its registered members</td></tr>
+              <tr><td>employs</td><td>Library</td><td>Librarian</td><td>Represents staff employed by the library</td></tr>
+              <tr><td>containsResourc</td><td>Library</td><td>Resource</td><td>Shows which resources are held by the library</td></tr>
+              <tr><td>borrows</td><td>Member</td><td>Resource</td><td>Connects a member to a borrowed resource</td></tr>
+              <tr><td>loanMadeBy</td><td>Loan</td><td>Member</td><td>Identifies the member who made the loan</td></tr>
+              <tr><td>hasLoanItem</td><td>Loan</td><td>Resource</td><td>Identifies the resource in a loan record</td></tr>
+              <tr><td>processesLoan</td><td>Librarian</td><td>Loan</td><td>Shows which librarian processes a loan</td></tr>
+              <tr><td>madeByMember</td><td>Reservation</td><td>Member</td><td>Links a reservation to the member who made it</td></tr>
+              <tr><td>reservesRoom</td><td>Reservation</td><td>StudyRoom</td><td>Links a reservation to a reserved study room</td></tr>
+              <tr><td>provideLoanService</td><td>Library</td><td>Loan</td><td>Represents loan services offered by the library</td></tr>
+              <tr><td>provideReservationService</td><td>Library</td><td>Reservation</td><td>Represents reservation services offered by the library</td></tr>
+              <tr><td>hasRoom</td><td>Library</td><td>StudyRoom</td><td>Shows that a library includes study rooms</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="card half">
+        <h2>Data Properties</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Used For</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>personName</td><td>Person</td><td>Stores the name of a member or librarian</td></tr>
+              <tr><td>studentID</td><td>Member</td><td>Stores the member's student identifier</td></tr>
+              <tr><td>staffID</td><td>Librarian</td><td>Stores the librarian's staff identifier</td></tr>
+              <tr><td>resourceTitle</td><td>Resource</td><td>Stores the title of a book or journal</td></tr>
+              <tr><td>isbn</td><td>Book</td><td>Stores the ISBN of a book</td></tr>
+              <tr><td>journalISSN</td><td>Journal</td><td>Stores the ISSN of a journal</td></tr>
+              <tr><td>loanDate</td><td>Loan</td><td>Stores the date a resource is borrowed</td></tr>
+              <tr><td>dueDate</td><td>Loan</td><td>Stores the return deadline</td></tr>
+              <tr><td>reservationDate</td><td>Reservation</td><td>Stores the reservation date</td></tr>
+              <tr><td>roomNumber</td><td>StudyRoom</td><td>Stores the room identifier</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="card half">
+        <h2>Restrictions and Consistency</h2>
+        <ul>
+          <li><strong>Member ⊑ borrows some Resource</strong></li>
+          <li><strong>Loan ⊑ loanMadeBy exactly 1 Member</strong></li>
+          <li><strong>Reservation ⊑ reservesRoom exactly 1 StudyRoom</strong></li>
+          <li><strong>Librarian</strong> and <strong>Member</strong> are disjoint classes</li>
+          <li><strong>Book</strong> and <strong>Journal</strong> are disjoint classes</li>
+        </ul>
+        <div class="note success">
+          HermiT reasoning was used in Protégé to verify that the ontology is logically consistent and free from contradictions.
+        </div>
+      </article>
+
+      <article class="card half">
+        <h2>Reasoning Highlights</h2>
+        <ul>
+          <li>Member and Librarian are inferred as subclasses of Person</li>
+          <li>Book and Journal are inferred as subclasses of Resource</li>
+          <li>Restrictions reinforce valid links between loan, reservation, member, and room entities</li>
+          <li>The model supports semantic verification beyond simple data storage</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>SPARQL Validation Queries</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Query</th>
+                <th>What It Verifies</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Query 1</td><td>Retrieves all members and their borrowed resources</td></tr>
+              <tr><td>Query 2</td><td>Verifies the relationship between Library and Librarian through <code>employs</code></td></tr>
+              <tr><td>Query 3</td><td>Verifies the relationship between Library and Member through <code>hasMember</code></td></tr>
+              <tr><td>Query 4</td><td>Verifies the complete borrowing process: Loan, Member, Resource, and Librarian</td></tr>
+              <tr><td>Query 5</td><td>Verifies the relationship between Reservation, Member, and StudyRoom</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note">
+          These queries demonstrate that the ontology supports meaningful retrieval of semantic relationships across people, resources, services, and facilities.
+        </div>
+      </article>
+
+      <article class="card half">
+        <h2>Reusability</h2>
+        <p>
+          This ontology can be reused or extended in:
+        </p>
+        <ul>
+          <li>Library management systems</li>
+          <li>Digital repositories</li>
+          <li>Knowledge graph platforms</li>
+          <li>Campus service integration projects</li>
+        </ul>
+        <p>
+          It can also be expanded with digital resources, overdue penalties, and time-based room booking logic.
+        </p>
+      </article>
+
+      <article class="card half">
+        <h2>Ontology Files and Publication</h2>
+        <p>
+          After uploading this project to GitHub Pages, place your OWL file in the same repository and update the links below.
+        </p>
+        <ul>
+          <li><a href="https://frankie2222222222222.github.io/SETU-library-ontology/campus_library.owl" target="_blank">Open OWL File</a></li>
+          <li><a href="https://github.com/Frankie222222222222/SETU-library-ontology" target="_blank">open the report on Github pages</a></li>
+          <li><a href="https://frankie222222222222.github.io/SETU-library-ontology/" target="_blank">open the introduction web</a></li>
+        </ul>
+        <div class="note">
+          If your final GitHub Pages address is different, replace the public ontology link with your own repository URL.
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      SETU Campus Library Ontology Presentation Page
+    </footer>
+  </div>
+</body>
+</html>
